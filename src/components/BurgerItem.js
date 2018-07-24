@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
 const BurgerItem = (props) => {
+  const burger = props.burger
+
+  const clicked = (e)=>{
+    console.log(burger)
+    props.clickHandler(burger)
+  }
+
   return (
     <div>
       <div className="BurgerItem">
-        { /* Name of Burger Here */ }
+        {burger.name}
       </div>
       <div className="BurgerBottomBun">
-        <button onClick={console.log}>Show</button>
-        <button onClick={console.log}>Delete</button>
+        <button onClick={clicked}>Show</button>
+        <button onClick={clicked}>Delete</button>
       </div>
     </div>
   )
